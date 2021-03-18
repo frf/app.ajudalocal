@@ -1,5 +1,5 @@
 import React from "react";
-import { Marker } from 'react-leaflet';
+// import { Marker } from 'react-leaflet';
 
 import PrimaryButton from "../../components/PrimaryButton";
 import Sidebar from "../../components/Sidebar";
