@@ -6,8 +6,8 @@ import Sidebar from "../../components/Sidebar";
 
 import './styles.css';
 import { FiPlus } from "react-icons/fi";
-import Map from "../../components/Map";
-import happyMapIcon from "../../components/Map/happMapIcon";
+// import Map from "../../components/Map";
+// import happyMapIcon from "../../components/Map/happMapIcon";
 
 export default function OrphanagesMap() {
   return (
@@ -18,10 +18,10 @@ export default function OrphanagesMap() {
         <form className="create-orphanage-form">
           <fieldset>
             <legend>Dados</legend>
-
+{/* 
             <Map style={{ width: '100%', height: 280 }}>
               <Marker interactive={false} icon={happyMapIcon} position={[-27.2092052,-49.6401092]} />
-            </Map>
+            </Map> */}
 
             <div className="input-block">
               <label htmlFor="name">Nome</label>
@@ -29,8 +29,13 @@ export default function OrphanagesMap() {
             </div>
 
             <div className="input-block">
-              <label htmlFor="about">Sobre <span>Máximo de 300 caracteres</span></label>
-              <textarea id="name" maxLength={300} />
+              <label htmlFor="name">Endereço</label>
+              <input id="address" />
+            </div>
+
+            <div className="input-block">
+              <label htmlFor="about">Instruções <span>Máximo de 700 caracteres</span></label>
+              <textarea id="instructions" maxLength={700} />
             </div>
 
             <div className="input-block">
@@ -43,29 +48,6 @@ export default function OrphanagesMap() {
               <button className="new-image">
                 <FiPlus size={24} color="#15b6d6" />
               </button>
-            </div>
-          </fieldset>
-
-          <fieldset>
-            <legend>Visitação</legend>
-
-            <div className="input-block">
-              <label htmlFor="instructions">Instruções</label>
-              <textarea id="instructions" />
-            </div>
-
-            <div className="input-block">
-              <label htmlFor="opening_hours">Nome</label>
-              <input id="opening_hours" />
-            </div>
-
-            <div className="input-block">
-              <label htmlFor="open_on_weekends">Atende fim de semana</label>
-
-              <div className="button-select">
-                <button type="button" className="active">Sim</button>
-                <button type="button">Não</button>
-              </div>
             </div>
           </fieldset>
 
