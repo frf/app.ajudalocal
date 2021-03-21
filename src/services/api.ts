@@ -1,4 +1,5 @@
 import axios from "axios";
+import useSWR from "swr";
 
 const api = axios.create({
   baseURL: "http://localhost:8000/v1",
@@ -42,3 +43,12 @@ api.interceptors.response.use(
 );
 
 export default api;
+
+export function useFetch<Data = any, Error = any>(url: string) {
+  const { data, error } = useSWR<Data, Error>(url, async (url) => {
+    const response = await api.get(url);
+    return response.data.data;
+  });
+
+  return { data, error };
+}

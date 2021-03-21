@@ -80,6 +80,10 @@ form.create-orphanage-form .input-block {
 
 }
 
+form.create-orphanage-form .input-block span{
+  color: #995c5c;
+}
+
 form.create-orphanage-form .input-block + .input-block {
   margin-top: 24px;
 }
