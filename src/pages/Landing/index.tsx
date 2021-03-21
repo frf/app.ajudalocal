@@ -13,8 +13,9 @@ export default function Landing() {
         <img src={logoImg} alt="AjudaLocal" />
  
         <main>
-          <h1>Ajude com o que puder</h1>
-          <p>Faça uma doação para quem precisa.</p>
+          <h1>Ajude cadastrando ou visitando um local</h1>
+          <p>1 - Cadastre um local que precisa de ajuda.</p>
+          <p>2 - Doação: Ajude fazendo uma doação, ache um local próximo de você.</p>
         </main>
 
         <div className="location">

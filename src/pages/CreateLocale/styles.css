@@ -1,8 +1,30 @@
-#page-create-orphanage {
+@media screen and (max-width: 780px) {
+  #page-create-locale aside {
+    display: none !important;
+  }
+}
+@media screen and (max-width: 768px) {
+  #page-create-locale main {
+    flex: 1 !important;
+  }
+  form.create-orphanage-form {
+    width: 97% !important;
+    margin: 13px !important;
+    padding: 23px !important;
+  }
+  form.create-orphanage-form fieldset legend {
+    font-size: 22px !important;
+  }
+  form.create-orphanage-form .input-block + .input-block {
+    margin-top: 14px !important;
+  }
+}
+
+#page-create-locale {
   display: flex;
 }
 
-#page-create-orphanage aside {
+#page-create-locale aside {
   height: 100%;
   position: fixed;
   padding: 32px 24px;
@@ -14,8 +36,8 @@
   align-items: center;
 }
 
-#page-create-orphanage aside footer a,
-#page-create-orphanage aside footer button {
+#page-create-locale aside footer a,
+#page-create-locale aside footer button {
   width: 48px;
   height: 48px;
 
@@ -33,12 +55,12 @@
   align-items: center;
 }
 
-#page-create-orphanage aside footer a:hover,
-#page-create-orphanage aside footer button:hover {
+#page-create-locale aside footer a:hover,
+#page-create-locale aside footer button:hover {
   background: #17D6EB;
 }
 
-#page-create-orphanage main {
+#page-create-locale main {
   flex: 1;
 }
 
@@ -50,7 +72,7 @@ form.create-orphanage-form {
   border: 1px solid #bdd7db;
   border-radius: 20px;
 
-  padding: 64px 80px;
+  padding: 64px 45px;
 
   overflow: hidden;
 }
@@ -98,8 +120,8 @@ form.create-orphanage-form .input-block label {
 form.create-orphanage-form .input-block label span {
   font-size: 14px;
   color: #8FA7B3;
-  margin-left: 24px;
-  line-height: 24px;
+  margin-left: 20px;
+  line-height: 20px;
 }
 
 form.create-orphanage-form .input-block input,

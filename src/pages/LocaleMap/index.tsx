@@ -1,4 +1,4 @@
-import React, { useState, Suspense } from "react";
+import React, { useState } from "react";
 import { Marker, Popup } from 'react-leaflet';
 import L from 'leaflet'
 import { Link } from "react-router-dom";
@@ -41,40 +41,39 @@ export default function LocaleMap() {
         </div>
       );
     }
+
+    console.log(data);
       
     return (
       <div id="page-map">
         <aside>
           <header>
             <img src={mapMarkerImg} alt="AjudaLocal" />
+            <h2>1 - Cadastre um local que esteja precisando de ajuda.</h2>
+            <p>Se você não pode ajudar agora mas viu um local que precisa de ajuda, marque este local cadastrando ele para todos nós.</p>
 
-            <h2>1 - Escolha um local para ajudar</h2>
-            <p>Veja a descrição deste local e vá até ele para poder ajudar.</p>
-
-            <h2>2 - Marque um local que precisa de ajuda</h2>
-            <p>Se você acha que neste local tem pessoas ou animais que possam precisar dde ajudar marque este local.</p>
+            <h2>2 - Doação: Escolha um local no mapa para você ajudar</h2>
+            <p>Veja a descrição deste local e faça uma visita até lá, pois pode ter alguem precisando de você.</p>
           </header>
 
           <footer>
           </footer>
         </aside>
-        <Suspense fallback="loading...">
-          <Map center={[position.latitude, position.longitude]} zoom={5}>
-            <MarkerClusterGroup>
-              {data.map(locale => (
-              <Marker key={locale.id} icon={happyMapIcon} position={[locale.latitude,locale.longitude]}>
-                <Popup closeButton={false} minWidth={240} maxWidth={240} className="map-popup">
-                  {locale.name}
-                  <Link to={`/orphanages/1`}>
-                    <FiArrowRight size={20} color="#fff" />
-                  </Link>
-                </Popup>
-              </Marker>
-              ))}
-            </MarkerClusterGroup>
-          </Map>
-        </Suspense>   
-        <Link to="/orphanages/create" className="create-orphanage">
+        <Map center={[position.latitude, position.longitude]} zoom={4} maxZoom={18} className='markercluster-map'>
+          <MarkerClusterGroup>
+            {data.map(locale => (
+            <Marker key={locale.id} icon={happyMapIcon} position={[locale.latitude,locale.longitude]}>
+              <Popup closeButton={false} minWidth={340} maxWidth={340} className="map-popup">
+                {locale.name}
+                <Link to={`/locale/1`}>
+                  <FiArrowRight size={20} color="#fff" />
+                </Link>
+              </Popup>
+            </Marker>
+            ))}
+          </MarkerClusterGroup>
+        </Map>
+        <Link to="/locale/create" className="create-orphanage">
           <FiPlus size={32} color="#FFF" />
         </Link>
       </div>

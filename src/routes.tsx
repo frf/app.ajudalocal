@@ -3,7 +3,7 @@ import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import CreateLocale from './pages/CreateLocale';
 import Landing from './pages/Landing';
-import Orphanage from './pages/Orphanage';
+import Locale from './pages/Locale';
 import LocaleMap from './pages/LocaleMap';
 
 export default function Routes() {
@@ -13,7 +13,7 @@ export default function Routes() {
         <Route path="/" exact component={Landing} />
         <Route path="/app" component={LocaleMap} />
         <Route path="/locale/create" component={CreateLocale} />
-        <Route path="/orphanages/:id" component={Orphanage} />
+        <Route path="/locale/:id" component={Locale} />
       </Switch>
     </BrowserRouter>
   );

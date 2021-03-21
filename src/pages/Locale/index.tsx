@@ -20,7 +20,7 @@ const happyMapIcon = L.icon({
   popupAnchor: [0, -60]
 })
 
-export default function Orphanage() {
+export default function Locale() {
   return (
     <div id="page-orphanage">
       <Sidebar />
