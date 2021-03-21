@@ -32,7 +32,7 @@ const schema = yup.object().shape({
 
 export default function CreateLocale() {
   const history = useHistory();
-  const { enqueueSnackbar, closeSnackbar } = useSnackbar();
+  const { enqueueSnackbar } = useSnackbar();
 
   const { register, handleSubmit, errors } = useForm<IFormInputs>({
     resolver: yupResolver(schema)
