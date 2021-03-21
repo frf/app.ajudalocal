@@ -1,8 +1,9 @@
 import axios from "axios";
 import useSWR from "swr";
+const { REACT_APP_API } = process.env;
 
 const api = axios.create({
-  baseURL: "http://localhost:8000/v1",
+  baseURL: REACT_APP_API,
 });
 
 api.interceptors.request.use(

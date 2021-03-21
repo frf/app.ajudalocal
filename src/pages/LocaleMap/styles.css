@@ -12,6 +12,26 @@
   display: flex;
 }
 
+
+.box.flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  padding: .5rem;
+  height: 300px;
+  border-radius: 4px;
+}
+
+.box p {
+  max-width: 125px;
+  text-align: center;
+  margin: .25rem;
+  padding: .25rem;
+}
+
+
 #page-map aside {
   width: 440px;
   background: linear-gradient(329.54deg, #3b0a7c 0%, #15D6D6 100%);

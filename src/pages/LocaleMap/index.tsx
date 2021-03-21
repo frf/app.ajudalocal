@@ -4,7 +4,7 @@ import L from 'leaflet'
 import { Link } from "react-router-dom";
 import { FiArrowRight, FiPlus } from "react-icons/fi";
 import MarkerClusterGroup from 'react-leaflet-cluster'
-
+import ReactLoading from 'react-loading';
 import mapMarkerImg from "../../assets/images/iconeLogo.png";
 import Map from '../../components/Map';
 
@@ -35,7 +35,11 @@ export default function LocaleMap() {
     });
 
     if (!data) {
-      return <p>Carregando...</p>;
+      return (
+        <div className="box flex">
+              <ReactLoading type={'spin'} color={'#3b0a7c'} height={50} width={50} />
+        </div>
+      );
     }
       
     return (
